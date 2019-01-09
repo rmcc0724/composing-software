@@ -1,0 +1,22 @@
+Don’t worry if you’re not following how that works, yet. Later on we’ll explore function composition in a lot more detail. In fact, it’s so essential, you’ll see it defined and demonstrated many times throughout this text. The point is to help you become so familiar with it that its definition and usage becomes automatic. Be one with the composition.
+
+pipe() creates a pipeline of functions, passing the output of one function to the input of another. When you use pipe() (and its twin, compose()) You don't need intermediary variables. Writing functions without mention of the arguments is called point-free style. To do it, you'll call a function that returns the new function, rather than declaring the function explicitly. That means you won't need the function keyword or the arrow syntax (=>).
+
+Point-free style can be taken too far, but a little bit here and there is great because those intermediary variables add unnecessary complexity to your functions.
+
+There are several benefits to reduced complexity:
+
+Working Memory
+The average human brain has only a few shared resources for discrete quanta in working memory, and each variable potentially consumes one of those quanta. As you add more variables, our ability to accurately recall the meaning of each variable is diminished. Working memory models typically involve 4–7 discrete quanta. Above those numbers, error rates dramatically increase.
+
+Using the pipe form, we eliminated 3 variables — freeing up almost half of our available working memory for other things. That reduces our cognitive load significantly. Software developers tend to be better at chunking data into working memory than the average person, but not so much more as to weaken the importance of conservation.
+
+Signal to Noise Ratio
+Concise code also improves the signal-to-noise ratio of your code. It’s like listening to a radio — when the radio is not tuned properly to the station, you get a lot of interfering noise, and it’s harder to hear the music. When you tune it to the correct station, the noise goes away, and you get a stronger musical signal.
+
+Code is the same way. More concise code expression leads to enhanced comprehension. Some code gives us useful information, and some code just takes up space. If you can reduce the amount of code you use without reducing the meaning that gets transmitted, you’ll make the code easier to parse and understand for other people who need to read it.
+
+Surface Area for Bugs
+Take a look at the before and after functions. It looks like the function went on a diet and lost a ton of weight. That’s important because extra code means extra surface area for bugs to hide in, which means more bugs will hide in it.
+
+Less code = less surface area for bugs = fewer bugs.
