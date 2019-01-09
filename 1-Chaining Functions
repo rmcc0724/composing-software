@@ -1,0 +1,21 @@
+/*If you’re chaining, you’re composing.
+When you compose functions intentionally, you’ll do it better.
+
+Composing functions intentionally, we can improve our doStuff() function to a simple one-liner:
+*/
+
+const g = n => n + 1;
+const f = n => n * 2;
+const doStuff = x => {
+  const afterG = g(x);
+  const afterF = f(afterG);
+  return afterF;
+};
+doStuff(20); // 42
+
+////Lets write the above code better
+
+const g = n => n + 1;
+const f = n => n * 2;
+const doStuffBetter = x => f(g(x));
+doStuffBetter(20); // 42
